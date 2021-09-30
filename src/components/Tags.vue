@@ -1,17 +1,18 @@
 <template>
+<div class="chip-group-wrapper">
 <v-container>
  <v-row :justify="justify">
     <v-col
       cols="2"
-      sm="1"
+      sm="7"
       md="6"
       lg="5">
 
-        <div>
-          <v-chip-group
+          <v-chip-group class="chip-group-wrapper__group"
             column>
 
-            <v-chip outlined
+            <v-chip 
+              class="chip-group-wrapper__chip" outlined
               v-for="tag in tags"
               :key="tag">
               
@@ -25,18 +26,24 @@
 
             
           </v-chip-group>
-        </div>
     </v-col>
   </v-row>
 </v-container>
+</div>
+
 </template>
 
-<style scoped>
+<style lang="scss">
+@import "@/sass/variables.scss";
+
+.chip-group-wrapper__chip {
+  font-family: $mulish;
+}
 </style>
 
 <script>
   export default {
-    name: 'TagsComponent',
+    name: 'Tags',
     props: ['tags', 'justify']
     }
 </script>
